@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" href="/login.css">
+    <script src="/jq.js"></script>
+    <script src="/login.js"></script>
+</head>
+
+<body>
+    <div class="out_border">
+        <div class="login border_height">
+            <h3>博客登录</h3>
+        </div>
+        <form action="/login" method="post" id="loginForm">
+            <div class="username border_height">
+                <input name="userName" type="text" value="请输入用户名">
+            </div>
+            <div class="pwd border_height">
+                <input name="userPassword" type="text" value="请输入密码">
+                <img src="/images/open.png">
+            </div>
+            <div>
+                <button type="submit" class="login_click border_height">登录</button>
+            </div>
+        </form>
+    </div>
+    <div class="tip">
+        <p class="tip_1"></p>
+    </div>
+</body>
+
+</html>

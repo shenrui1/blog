@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理员页面</title>
+    <link rel="stylesheet" href="/administrators/admin.css">
+    <script src="/jq.js"></script>
+    <script src="/administrators/admin.js"></script>
+</head>
+
+<body>
+    <p class="hidden_all" style="display: none;">
+        <%= renderUsers %>
+    </p>
+    <p class="hidden_all_blogs" style="display: none;">
+        <%= renderBlogs %>
+    </p>
+    <div class="all">
+        <header class="out">
+            <h1>
+                <%= title %>，欢迎进入博客</h1>
+            <a href="#" class="logout">退出登录</a>
+        </header>
+        <div class="main_tab">
+            <nav>
+                <ul class="first_level">
+                    <li class="first_level_li">
+                        <h4>账号管理</h4>
+                        <ul class="second_level_user">
+                            <li>添加新账号</li>
+                            <li>删除账号</li>
+                        </ul>
+                    </li>
+                    <li class="first_level_li">
+                        <h4>文章管理</h4>
+                        <ul class="second_level_blog">
+                            <li>编辑新文章</li>
+                            <li>查询/修改文章</li>
+                            <li>删除文章</li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="edit">
+                <div class="main_content">
+                    <div class="user">
+                        <h2>已注册账号</h2>
+                        <form>
+                            <table cellspacing="0">
+                                <thead>
+                                    <th>序号</th>
+                                    <th>用户名</th>
+                                    <th>密码</th>
+                                    <th>用户类型</th>
+                                    <!-- <th>操作</th> -->
+                                </thead>
+                                <tbody id="allUsers"></tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="blog">
+                        <h2>已发布文章</h2>
+                        <form>
+                            <table cellspacing="0">
+                                <thead>
+                                    <th>序号</th>
+                                    <th>文章名</th>
+                                    <th>作者</th>
+                                    <th>日期</th>
+                                    <th>类别</th>
+                                    <!-- <th>操作</th> -->
+                                </thead>
+                                <tbody id="allBlogs"></tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="add_user">
+                        <h2>添加新账号</h2>
+                        <form action="/add_user" method="post" id="addUser">
+                            <table>
+                                <tr>
+                                    <td>选择用户类型：</td>
+                                    <td>
+                                        <select name="userAdmin" id="userAdmin">
+                                            <option value="1">管理员</option>
+                                            <option value="0">普通用户</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>设置用户名：</td>
+                                    <td>
+                                        <input name="userName" type="text" value="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>设置密码：</td>
+                                    <td>
+                                        <input name="userPassword" type="password" value="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input type="submit" value="添加" id="submit_id">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="delete_user">
+                        <h2>删除账号</h2>
+                        <form action="/del_user" method="post" id="delUser">
+                            <table>
+                                <tr>
+                                    <td>删除用户名：</td>
+                                    <td>
+                                        <input name="userName" type="text" value="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input type="submit" value="确认删除" id="delete_id">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="add_blog">
+                        <h2>编辑新文章</h2>
+                        <form action="/add_blog" method="post" id="addBlog">
+                            <table>
+                                <tr>
+                                    <td>文章名称：</td>
+                                    <td style="text-align: left;">
+                                        <input name="blogName" type="text" value="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>作者：</td>
+                                    <td style="text-align: left;">
+                                        <input name="blogAuthor" type="text" value="<%= title %>" readonly>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>文章类别：</td>
+                                    <td class="align_left">
+                                        <p>
+                                            <input type="checkbox" name="blogClass" id="Express" class="blog_class" value="Express"><label for="Express">Express</label>
+                                        </p>
+                                        <p>
+                                            <input type="checkbox" name="blogClass" id="React" class="blog_class" value="React"><label for="React">React</label>
+                                        </p>
+                                        <p>
+                                            <input type="checkbox" name="blogClass" id="Webpack" class="blog_class" value="Webpack"><label for="Webpack">Webpack</label>
+                                        </p>
+                                        <p>
+                                            <input type="checkbox" name="blogClass" id="MySQL" class="blog_class" value="MySQL"><label for="MySQL">MySQL</label>
+                                        </p>
+                                        <p>
+                                            <input type="checkbox" name="blogClass" id="TypeScript" class="blog_class" value="TypeScript"><label for="TypeScript">TypeScript</label>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>文章内容:</td>
+                                    <td>
+                                        <textarea name="blogContent" cols="150" rows="30" style="resize: none;"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input type="submit" value="确认发布">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="search_blog">
+                        <h2>搜索文章</h2>
+                        <form action="/search_blog" method="post" id="searchBlog">
+                            <table>
+                                <tr>
+                                    <td>按文章名搜索：</td>
+                                    <td>
+                                        <input name="blogName" type="text">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>按类别搜索：</td>
+                                    <td class="align_left">
+                                        <p>
+                                            <input type="checkbox" name="blogClass" id="sExpress" class="blog_class" value="Express"><label for="sExpress">Express</label>
+                                        </p>
+                                        <p>
+                                            <input type="checkbox" name="blogClass" id="sReact" class="blog_class" value="React"><label for="sReact">React</label>
+                                        </p>
+                                        <p>
+                                            <input type="checkbox" name="blogClass" id="sWebpack" class="blog_class" value="Webpack"><label for="sWebpack">Webpack</label>
+                                        </p>
+                                        <p>
+                                            <input type="checkbox" name="blogClass" id="sMySQL" class="blog_class" value="MySQL"><label for="sMySQL">MySQL</label>
+                                        </p>
+                                        <p>
+                                            <input type="checkbox" name="blogClass" id="sTypeScript" class="blog_class" value="TypeScript"><label for="sTypeScript">TypeScript</label>
+                                        </p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input type="submit" value="搜索">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="delete_blog">
+                        <h2>删除文章</h2>
+                        <form action="/del_blog" method="post" id="delBlog">
+                            <table>
+                                <tr>
+                                    <td>删除文章名：</td>
+                                    <td>
+                                        <input name="blogName" type="text" value="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input type="submit" value="确认删除" id="delete_blog">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <h4>shenrui 博客系统</h4>
+        </footer>
+    </div>
+</body>
+
+</html>

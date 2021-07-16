@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理员页面</title>
+    <link rel="stylesheet" href="/administrators/search_class.css">
+    <script src="/jq.js"></script>
+    <script src="/administrators/search_class.js"></script>
+</head>
+
+<body>
+    <p class="hidden_blog" style="display: none;">
+        <%= blogList %>
+    </p>
+    <div class="all">
+        <header class="out">
+            <h1>
+                <%= title %>，欢迎进入博客</h1>
+            <a href="#" class="logout">退出登录</a>
+        </header>
+        <div class="main_tab">
+            <nav>
+                <ul class="first_level">
+                    <li class="first_level_li">
+                        <h4>返回</h4>
+                    </li>
+                </ul>
+            </nav>
+            <div class="edit">
+                <div class="main_content"></div>
+            </div>
+        </div>
+        <footer>
+            <h4>shenrui 博客系统</h4>
+        </footer>
+    </div>
+</body>
+
+</html>

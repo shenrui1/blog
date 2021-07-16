@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理员页面</title>
+    <link rel="stylesheet" href="/administrators/search_blog.css">
+    <script src="/jq.js"></script>
+    <script src="/administrators/search_blog.js"></script>
+</head>
+
+<body>
+    <div class="all">
+        <header class="out">
+            <h1>
+                <%= title %>，欢迎进入博客</h1>
+            <a href="#" class="logout">退出登录</a>
+        </header>
+        <div class="main_tab">
+            <nav>
+                <ul class="first_level">
+                    <li class="first_level_li">
+                        <h4>返回</h4>
+                    </li>
+                </ul>
+            </nav>
+            <div class="edit">
+                <div class="main_content">
+                    <h2>修改文章</h2>
+                    <form action="/mod_blog" method="post" id="modBlog">
+                        <table>
+                            <tr>
+                                <td>原文章名称：</td>
+                                <td style="text-align: left;">
+                                    <input name="o_blogName" type="text" value="<%= blogName %>" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>新文章名称：</td>
+                                <td style="text-align: left;">
+                                    <input name="blogName" type="text" value="<%= blogName %>">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>原作者：</td>
+                                <td style="text-align: left;">
+                                    <input name="o_blogAuthor" type="text" value="<%= blogAuthor%>" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>新作者：</td>
+                                <td style="text-align: left;">
+                                    <input name="blogAuthor" type="text" value="<%= blogAuthor%>">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>文章类别：</td>
+                                <td class="align_left">
+                                    <p>
+                                        <input type="checkbox" name="blogClass" id="Express" class="blog_class" value="Express"><label for="Express">Express</label>
+                                    </p>
+                                    <p>
+                                        <input type="checkbox" name="blogClass" id="React" class="blog_class" value="React"><label for="React">React</label>
+                                    </p>
+                                    <p>
+                                        <input type="checkbox" name="blogClass" id="Webpack" class="blog_class" value="Webpack"><label for="Webpack">Webpack</label>
+                                    </p>
+                                    <p>
+                                        <input type="checkbox" name="blogClass" id="MySQL" class="blog_class" value="MySQL"><label for="MySQL">MySQL</label>
+                                    </p>
+                                    <p>
+                                        <input type="checkbox" name="blogClass" id="TypeScript" class="blog_class" value="TypeScript"><label for="TypeScript">TypeScript</label>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>文章内容:</td>
+                                <td>
+                                    <textarea name="blogContent" cols="150" rows="30" style="resize: none;"><%= blogContent %></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="submit" value="确认修改">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <h4>shenrui 博客系统</h4>
+        </footer>
+    </div>
+</body>
+
+</html>
