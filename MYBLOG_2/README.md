@@ -4,51 +4,51 @@
 
 ├── node_modules
 
-├── public                        // 静态资源
+├── public                                  // 静态资源
 
-├── server                        // 服务端
+├── server                                  // 服务端
 
-│   ├── database                  // 数据集
+│        ├── database                       // 数据集
 
-│   ├── dist                      // 打包后文件
+│        ├── dist                           // 打包后文件
 
-│   ├── src
+│        ├── src
 
-│   │   ├── model                 // MySQL
+│        │        ├── model                 // MySQL
 
-│   │   ├── public                // 存放react打包后文件（未完成）
+│        │        ├── public                // 存放react打包后文件（未完成）
 
-│   │   ├── routes                // 路由
+│        │        ├── routes                // 路由
 
-│   │   ├── app.ts                // 服务端入口文件
+│        │        ├── app.ts                // 服务端入口文件
 
-│   │   ├── model                 // MySQL
+│        │        ├── model                 // MySQL
 
-│   ├── package-lock.json
+│        ├── package-lock.json
 
-│   ├── package.json
+│        ├── package.json
 
-│   ├── tsconfig.json
+│        ├── tsconfig.json
 
-│   ├── webpack.config.js
+│        ├── webpack.config.js
 
 ├── src
 
-│   ├── view                      // react页面
+│        ├── view                           // react页面
 
-│   │   ├── administrators        // 管理员界面
+│        │        ├── administrators        // 管理员界面
 
-│   │   ├── users                 // 普通用户界面
+│        │        ├── users                 // 普通用户界面
 
-│   │   ├── login.css
+│        │        ├── login.css
 
-│   │   ├── login.js              // 登录界面
+│        │        ├── login.js              // 登录界面
 
-│   ├── App.js                    // 主程序
+│        ├── App.js                         // 主程序
 
-│   ├── index.css                 // 路由
+│        ├── index.css                      // 路由
 
-│   ├── index.js                  // react入口文件
+│        ├── index.js                       // react入口文件
 
 ├── .gitignore
 
