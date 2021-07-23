@@ -1,0 +1,30 @@
+.each_blog {
+    margin: 10px 0;
+    padding: 10px 10px 20px;
+    border-bottom: 1px solid rgb(202, 198, 198);
+}
+
+h3 {
+    font-weight: 700;
+    line-height: 50px;
+}
+
+.information {
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+.light {
+    float: left;
+    margin-right: 15px;
+    font-size: 14px;
+    color: gray;
+}
+
+.keys {
+    float: left;
+    margin-left: 15px;
+    font-size: 14px;
+    font-weight: 700;
+    color: red;
+}

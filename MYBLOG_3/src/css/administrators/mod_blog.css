@@ -1,0 +1,36 @@
+.main_content {
+    position: relative;
+}
+
+h2 {
+    font-weight: 700;
+    padding-bottom: 30px;
+}
+
+table td {
+    padding: 20px;
+    font-size: 20px;
+    text-align: right;
+}
+
+table input {
+    width: 300px;
+    height: 30px;
+}
+
+table .align_left {
+    text-align: left;
+}
+
+table .blog_class {
+    width: 30px;
+    height: 20px;
+}
+
+table p {
+    margin-bottom: 10px;
+}
+
+table #add_blog {
+    width: 100px;
+}

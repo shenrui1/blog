@@ -1,0 +1,16 @@
+.blog {
+    position: relative;
+}
+
+.blog h2 {
+    font-weight: 700;
+    padding-bottom: 30px;
+}
+
+.blog table th,
+.blog table td {
+    border: 1px solid black;
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+}

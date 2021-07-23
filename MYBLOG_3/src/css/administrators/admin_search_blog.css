@@ -1,0 +1,36 @@
+.search_blog {
+    position: relative;
+}
+
+.search_blog h2 {
+    font-weight: 700;
+    padding-bottom: 30px;
+}
+
+.search_blog table td {
+    padding: 20px;
+    font-size: 20px;
+    text-align: right;
+}
+
+.search_blog table input {
+    width: 300px;
+    height: 30px;
+}
+
+.search_blog table .align_left {
+    text-align: left;
+}
+
+.search_blog table .blog_class {
+    width: 30px;
+    height: 20px;
+}
+
+.search_blog table p {
+    margin-bottom: 10px;
+}
+
+.search_blog table #search_blog {
+    width: 100px;
+}

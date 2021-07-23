@@ -1,0 +1,10 @@
+.out_border {
+    margin: 200px auto 0px;
+    width: 800px;
+}
+
+.head, .login {
+    text-align: center;
+    font-weight: 400;
+    line-height: 50px;
+}

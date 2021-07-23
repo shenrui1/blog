@@ -1,0 +1,23 @@
+.delete_user {
+    position: relative;
+}
+
+.delete_user h2 {
+    font-weight: 700;
+    padding-bottom: 30px;
+}
+
+.delete_user table td {
+    padding: 20px;
+    font-size: 20px;
+    text-align: right;
+}
+
+.delete_user table input {
+    width: 300px;
+    height: 30px;
+}
+
+.delete_user table #delete_id {
+    width: 100px;
+}
